@@ -56,6 +56,8 @@ function ishttpup() {
 
 function setup_hazelcast {
   # TODO: Figure out a better way to do this
+  echo SETUP_HAZL
+  
   if [ -f "$OPENSHIFT_TOMCAT_DIR/versions/shared/conf/cluster.xml" ]; then
     cp $OPENSHIFT_TOMCAT_DIR/versions/shared/conf/cluster.xml $OPENSHIFT_TOMCAT_DIR/conf/
   fi
