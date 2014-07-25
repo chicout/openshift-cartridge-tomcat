@@ -37,7 +37,7 @@ pushd $OPENSHIFT_TOMCAT_DIR > /dev/null
            -e "s/\${env.OPENSHIFT_TOMCAT_PROXY_IP}/${OPENSHIFT_TOMCAT_PROXY_IP}/g" \
            -e "s/\${env.OPENSHIFT_TOMCAT_IP}/${OPENSHIFT_TOMCAT_IP}/g" \
            -e "s/\${env.OPENSHIFT_TOMCAT_HAZELCAST_CLUSTER}/${OPENSHIFT_TOMCAT_HAZELCAST_CLUSTER}/g" \
-           ./conf/cluster.xml
+           $OPENSHIFT_TOMCAT_DIR/versions/shared/conf/cluster.xml
 
     sed -i -e "s|\${env.OPENSHIFT_TOMCAT_LOG_DIR}|${OPENSHIFT_TOMCAT_LOG_DIR}|g" ./conf/logging.properties
 popd > /dev/null
