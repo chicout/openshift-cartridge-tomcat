@@ -83,8 +83,6 @@ function setup_hazelcast {
 }
 
 function start_app() {
-    setup_hazelcast
-
     # Check for running app
     if isrunning; then
         echo "The tomcat cartridge is already running" 1>&2
@@ -107,7 +105,7 @@ function start_app() {
         
         # Setup clustering
         if [ "$OPENSHIFT_TOMCAT_HAZELCAST_PROXY_PORT" ]; then
-          
+          setup_hazelcast
         fi
     fi
 }
