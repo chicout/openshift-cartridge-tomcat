@@ -117,3 +117,4 @@ Version-Overrides:
     - tomcat
     - tomcat6
     - web_framework
+Source-Url: https://github.com/chicout/openshift-cartridge-tomcat/archive/master.zip
