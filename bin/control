@@ -101,14 +101,10 @@ function start_app() {
         fi
         
         
-  # Setup clustering
-  if [ "$OPENSHIFT_VERTX_HAZELCAST_PROXY_PORT" ]; then
-    setup_hazelcast
-
-    VERTX_OPTS="$VERTX_OPTS -Dvertx.cluster.public.host=${OPENSHIFT_VERTX_PROXY_IP} -Dvertx.cluster.public.port=${OPENSHIFT_VERTX_CLUSTER_PROXY_PORT}"
-
-    vertx_cluster="-cluster -cluster-port $OPENSHIFT_VERTX_CLUSTER_PORT -cluster-host $OPENSHIFT_VERTX_IP"
-  fi
+        # Setup clustering
+        if [ "$OPENSHIFT_TOMCAT_HAZELCAST_PROXY_PORT" ]; then
+          setup_hazelcast
+        fi
     fi
 }
 
