@@ -22,7 +22,7 @@ export JAVA_HOME=$OPENSHIFT_TOMCAT_JDK7
 reinstall_path
 
 
-touch ${OPENSHIFT_TOMCAT_DIR}/env/OPENSHIFT_TOMCAT_HAZELCAST_CLUSTER
+#touch ${OPENSHIFT_TOMCAT_DIR}/env/OPENSHIFT_TOMCAT_HAZELCAST_CLUSTER
 
 
 OPENSHIFT_TOMCAT_PROXY_IP=$(ping -c 1 ${OPENSHIFT_GEAR_DNS} | awk '{ print $3 ; exit }' | sed 's/(//g' | sed 's/)//g')
