@@ -26,7 +26,7 @@ done
 [ $# -eq 3 ] || print_help
 
 if [ -z "${OPENSHIFT_GEAR_UUID}" ]; then
-  echo "1:1"
+  echo ""
 else
   OPENSHIFT_TOMCAT_PROXY_IP=$(ping -c 1 ${OPENSHIFT_GEAR_DNS} | awk '{ print $3 ; exit }' | sed 's/(//g' | sed 's/)//g')
   echo ${OPENSHIFT_GEAR_UUID}:${OPENSHIFT_TOMCAT_PROXY_IP}
