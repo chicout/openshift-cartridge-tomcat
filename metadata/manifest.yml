@@ -35,6 +35,8 @@ Publishes:
     Type: NET_TCP:http
   publish-tomcat-cluster:
     Type: NET_TCP:tomcat-cluster-info
+  publish-sshhost:
+    Type: NET_TCP:sshhost-info    
 Subscribes:
   set-env:
     Type: ENV:*
@@ -43,6 +45,8 @@ Subscribes:
     Type: NET_TCP:jdbc
   set-tomcat-cluster:
     Type: NET_TCP:tomcat-cluster-info
+  set-sshhost:
+    Type: NET_TCP:sshhost-info
 Endpoints:
 - Private-IP-Name: IP
   Private-Port-Name: HTTP_PORT
