@@ -15,7 +15,7 @@
     <name>dev</name>
     <password>dev-pass</password>
   </group>
-  <management-center enabled="true">${env.OPENSHIFT_TOMCAT_PROXY_IP}</management-center>
+  <management-center enabled="true">http://localhost:8080/mancenter</management-center>
   <network>
     <public-address>${env.OPENSHIFT_TOMCAT_PROXY_IP}:${env.OPENSHIFT_TOMCAT_HAZELCAST_PROXY_PORT}</public-address>
     <port auto-increment="false" port-count="100">${env.OPENSHIFT_TOMCAT_HAZELCAST_PORT}</port>
