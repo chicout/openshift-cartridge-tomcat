@@ -54,3 +54,12 @@ ln -sf ${OPENSHIFT_REPO_DIR}/.openshift/config/postgresql_module.xml ${OPENSHIFT
 ln -sf ${OPENSHIFT_REPO_DIR}/.openshift/config/catalina.properties ${OPENSHIFT_TOMCAT_DIR}/conf
 ln -sf ${OPENSHIFT_REPO_DIR}/.openshift/config/catalina.policy ${OPENSHIFT_TOMCAT_DIR}/conf
 ln -sf ${OPENSHIFT_REPO_DIR}/.openshift/config/logging.properties ${OPENSHIFT_TOMCAT_DIR}/conf
+
+pushd "${OPENSHIFT_DATA_DIR}"
+  HAZELCAST_VERSION="3.2.5"
+  wget "http://download.hazelcast.com/download.jsp?version=hazelcast-${HAZELCAST_VERSION}&type=tar&p=39114120" -O "hazelcast.tar.gz"
+  tar xvzf ${OPENSHIFT_DATA_DIR}/hazelcast.tar.gz
+  rm -f ${OPENSHIFT_DATA_DIR}/hazelcast.tar.gz
+popd
+
+cp ${OPENSHIFT_DATA_DIR}/hazelcast-${HAZELCAST_VERSION}/lib/hazelcast-all-${HAZELCAST_VERSION}.jar ${OPENSHIFT_TOMCAT_DIR}/lib
