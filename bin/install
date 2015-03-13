@@ -23,3 +23,5 @@ reinstall_path
 
 
 touch ${OPENSHIFT_TOMCAT_DIR}/env/OPENSHIFT_TOMCAT_HAZELCAST_CLUSTER
+touch ${OPENSHIFT_TOMCAT_DIR}/env/OPENSHIFT_TOMCAT_HAZELCAST_MAIN_GEAR
+echo "$(ping -c 1 ${OPENSHIFT_GEAR_DNS} | awk '{ print $3 ; exit }' | sed 's/(//g' | sed 's/)//g')" > ${OPENSHIFT_TOMCAT_DIR}/env/OPENSHIFT_TOMCAT_HAZELCAST_MAIN_GEAR
