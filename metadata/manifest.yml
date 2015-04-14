@@ -77,6 +77,10 @@ Endpoints:
   Private-Port-Name: CLUSTER_PORT
   Private-Port:      9123
   Public-Port-Name:  CLUSTER_PROXY_PORT
+- Private-IP-Name:   IP
+  Private-Port-Name: SOCKET_PORT
+  Private-Port:      9130
+  Public-Port-Name:  SOCKET_PROXY_PORT
 Additional-Control-Actions:
 - threaddump
 Version-Overrides:
